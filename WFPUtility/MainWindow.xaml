@@ -5,10 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WFPUtility"
         mc:Ignorable="d"
-        Title="WPF Utility" Height="450" Width="800"
+        Title="WPF Utility" Height="350" Width="350"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize">
-    <Grid>
+        ResizeMode="NoResize"
+        Background="#333333">
 
-    </Grid>
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="10,0" />
+            <Setter Property="Padding" Value="10,10" />
+        </Style>
+    </Window.Resources>
+
+    <DockPanel Margin="10">
+        <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
+            <Button Name="btnSelectFile" Click="btnSelectFile_Click" Style="{StaticResource ButtonStyle}">Select a file</Button>
+            <Button Name="btnSaveFile" Click="btnSaveFile_Click" Style="{StaticResource ButtonStyle}">Save Data</Button>
+        </WrapPanel>
+        <TextBox Name="txtEditor" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+    </DockPanel>
+
+    
+
+    <!--<Grid>
+        <TextBox HorizontalAlignment="Left" Height="43" Margin="30,10,0,0" TextWrapping="Wrap"   
+                 VerticalAlignment="Top" Width="436" Name="FileNameTextBox"/>
+        <Button x:Name="BrowseButton" Content="Browse a file" HorizontalAlignment="Left"   
+                Margin="485,13,0,0" VerticalAlignment="Top" Width="121" Click="BrowseButton_Click"   
+                RenderTransformOrigin="1.047,0.821" Height="40"/>
+        <Button x:Name="SaveButton" Content="Save a file" HorizontalAlignment="Right"   
+                Margin="0,13,47,0" VerticalAlignment="Top" Width="121" Click="SaveButton_Click"   
+                RenderTransformOrigin="1.047,0.821" Height="40"/>
+        <TextBox HorizontalAlignment="Left" Height="282" Margin="30,96,0,0"   
+                   TextWrapping="Wrap" VerticalAlignment="Top"  
+                   Width="703" Name="TextBox1" 
+                 AcceptsReturn="True" 
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+    </Grid>-->
 </Window>
