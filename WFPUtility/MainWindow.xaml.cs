@@ -44,17 +44,18 @@ namespace WFPUtility
 
         private void btnSaveFile_Click(object sender, RoutedEventArgs e)
         {
+            // SaveFileDialog will save data to a file.
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.DefaultExt = ".txt"; // Default file extension
-            saveFileDialog.Filter = "Text documents (.txt)|*.txt |Excel workbook (.xlsx)|*.xlsx|All files (*.*)|*.*"; // Filter files by extension
+            saveFileDialog.Filter = "Excel workbook (.xls)|*.xls |All files (*.*)|*.*"; // Filter files by extension
             saveFileDialog.AddExtension = true;
             saveFileDialog.OverwritePrompt = true;
-            
 
             if (saveFileDialog.ShowDialog() == true)
             {
+                // Write data to excel
                 File.WriteAllText(saveFileDialog.FileName, txtEditor.Text);
 
+                // Display Message box to tell user that file has been saved. 
                 string messageBoxText = "File saved";
                 string caption = "File saved";
                 MessageBoxButton button = MessageBoxButton.OK;
@@ -63,8 +64,6 @@ namespace WFPUtility
 
                 result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.OK);
             }
-
-            
         }
     }
 }
