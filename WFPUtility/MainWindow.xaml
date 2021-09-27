@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WFPUtility"
         mc:Ignorable="d"
-        Title="WPF Utility" Height="350" Width="350"
+        Title="WPF Utility" Height="250" Width="350"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Background="#333333">
@@ -20,9 +20,12 @@
     <DockPanel Margin="10">
         <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
             <Button Name="btnSelectFile" Click="btnSelectFile_Click" Style="{StaticResource ButtonStyle}">Select a file</Button>
-            <Button Name="btnSaveFile" Click="btnSaveFile_Click" Style="{StaticResource ButtonStyle}">Save Data</Button>
+            <Button Name="btnSaveFile" Click="btnSaveFile_Click" Style="{StaticResource ButtonStyle}">Save To Excel</Button>
         </WrapPanel>
-        <TextBox Name="txtEditor" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+        <TextBox Name="txtEditor" TextWrapping="Wrap" 
+                 AcceptsReturn="True" 
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 IsReadOnly="True"/>
     </DockPanel>
 
     
